@@ -120,6 +120,9 @@ img {
 }
 
 .cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     background-color: var(--cor-branca);
     box-shadow: var(--sombra);
 }
@@ -137,7 +140,7 @@ img {
 
 .menu-link {
     display: block;
-    padding: 8px 10px;
+    padding: 8px;
     border-radius: var(--raio);
     color: var(--cor-texto);
     font-size: 15px;
@@ -160,7 +163,8 @@ img {
     padding-bottom: 8px;
 }
 
-#menu-botao {
+#menu-botao,
+.navbar-toggler {
     padding: 6px 12px;
     border: 2px solid var(--cor-principal);
     border-radius: var(--raio);
