@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Escola Evolução</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .banner-pagina {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/images/patio-externo.jpg");
+        }
+    </style>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="faixa-topo">
+            <div class="conteudo faixa-topo-itens">
+                <span>Telefone: (41) 3398-4783</span>
+                <a href="https://wa.me/5541991664783" target="_blank">WhatsApp: (41) 99166-4783</a>
+                <a href="mailto:secretaria@evolucao.g12.br">secretaria@evolucao.g12.br</a>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-xl">
+            <div class="container">
+                <a class="navbar-brand logo" href="index.html">
+                    <img src="assets/images/logo-color.png" alt="Logo da Escola Evolução">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu-principal">
+                    <ul class="navbar-nav ms-auto gap-1">
+                        <li class="nav-item"><a class="nav-link menu-link" href="index.html">Início</a></li>
+                        <li class="nav-item"><a class="nav-link menu-link" href="sobre.html">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link menu-link" href="ensino.html">Ensino</a></li>
+                        <li class="nav-item"><a class="nav-link menu-link" href="diferenciais.html">Diferenciais</a></li>
+                        <li class="nav-item"><a class="nav-link menu-link" href="atividades.html">Atividades</a></li>
+                        <li class="nav-item"><a class="nav-link menu-link" href="estrutura.html">Estrutura</a></li>
+                        <li class="nav-item"><a class="nav-link menu-link" href="eventos.html">Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link menu-link" href="multimidia.html">Multimídia</a></li>
+                        <li class="nav-item"><a class="nav-link menu-link menu-destaque" href="matriculas.html">Matrículas</a></li>
+                        <li class="nav-item"><a class="nav-link menu-link ativo" href="contato.html">Contato</a></li>
+                        <li class="nav-item"><a class="nav-link menu-link" href="https://www.facebook.com/evolucaosjp" target="_blank">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner-pagina">
+            <div class="container">
+                <h1>Contato</h1>
+                <p>Fale com a Escola Evolução</p>
+            </div>
+        </section>
+
+        <section class="secao">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-7">
+                        <h2 class="titulo-secao">Envie uma mensagem</h2>
+                        <div class="alert alert-success d-none" id="alerta-sucesso" role="alert">
+                            Mensagem enviada com sucesso! Ela foi salva na lista abaixo.
+                        </div>
+                        <form id="form-contato" class="card card-escola card-body">
+                            <div class="mb-3">
+                                <label for="nome" class="form-label">Nome</label>
+                                <input type="text" id="nome" class="form-control campo" placeholder="Digite seu nome completo" required minlength="3" pattern="[A-Za-zÀ-ÿ ]+" title="Use apenas letras e espaços">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="email" id="email" class="form-control campo" placeholder="seuemail@exemplo.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefone" class="form-label">Telefone</label>
+                                <input type="text" id="telefone" class="form-control campo" placeholder="(41) 99999-9999" required pattern="\(\d{2}\) \d{4,5}-\d{4}" title="Use o formato (41) 99999-9999">
+                            </div>
+                            <div class="mb-3">
+                                <label for="assunto" class="form-label">Assunto</label>
+                                <select id="assunto" class="form-select campo" required>
+                                    <option value="">Selecione um assunto</option>
+                                    <option value="Matrículas">Matrículas</option>
+                                    <option value="Agendar visita">Agendar visita</option>
+                                    <option value="Dúvidas">Dúvidas</option>
+                                    <option value="Outros">Outros</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensagem" class="form-label">Mensagem</label>
+                                <textarea id="mensagem" class="form-control campo" rows="4" placeholder="Escreva sua mensagem" required minlength="10"></textarea>
+                            </div>
+                            <input type="submit" class="btn btn-escola" value="Enviar mensagem">
+                        </form>
+                    </div>
+                    <div class="col-lg-5">
+                        <h2 class="titulo-secao">Onde estamos</h2>
+                        <article class="card card-escola">
+                            <div class="card-body">
+                                <p><strong>Endereço:</strong> Rua Professora Marieta de Souza e Silva, 2386, Parque da Fonte, São José dos Pinhais - PR, CEP 83050-160</p>
+                                <p><strong>Telefone:</strong> (41) 3398-4783</p>
+                                <p><strong>WhatsApp:</strong> (41) 99166-4783</p>
+                                <p><strong>E-mail:</strong> <a href="mailto:secretaria@evolucao.g12.br">secretaria@evolucao.g12.br</a></p>
+                                <p><strong>Atendimento:</strong> segunda a sexta, das 07h00 às 18h30</p>
+                                <p><strong>Redes sociais:</strong> <a href="https://www.facebook.com/evolucaosjp" target="_blank">Facebook</a> e <a href="https://www.instagram.com/evolucaosjp" target="_blank">Instagram</a></p>
+                                <a class="btn btn-escola" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Professora+Marieta+de+Souza+e+Silva+2386+Sao+Jose+dos+Pinhais" target="_blank">Ver no mapa</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao">
+            <div class="container">
+                <h2 class="titulo-secao">Mensagens enviadas</h2>
+                <div id="lista-mensagens"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="conteudo">
+            <div class="rodape-colunas">
+                <div>
+                    <img class="rodape-logo" src="assets/images/logo-white.png" alt="Logo da Escola Evolução">
+                    <p>Educação Infantil e Ensino Fundamental na comunidade do Parque da Fonte, São José dos Pinhais - PR.</p>
+                </div>
+                <div>
+                    <h3>Contato</h3>
+                    <p>Rua Professora Marieta de Souza e Silva, 2386</p>
+                    <p>Parque da Fonte - CEP 83050-160</p>
+                    <p>Telefone: (41) 3398-4783</p>
+                    <p>WhatsApp: (41) 99166-4783</p>
+                    <p>E-mail: <a href="mailto:secretaria@evolucao.g12.br">secretaria@evolucao.g12.br</a></p>
+                </div>
+                <div>
+                    <h3>Atendimento</h3>
+                    <p>Segunda a sexta</p>
+                    <p>07h00 às 18h30</p>
+                </div>
+                <div>
+                    <h3>Redes sociais</h3>
+                    <p><a href="https://www.facebook.com/evolucaosjp" target="_blank">Facebook</a></p>
+                    <p><a href="https://www.instagram.com/evolucaosjp" target="_blank">Instagram</a></p>
+                </div>
+            </div>
+            <p class="rodape-copyright">&copy; 2026 Escola Evolução Educação Infantil e Ensino Fundamental Ltda. Trabalho acadêmico - Universidade Positivo.</p>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

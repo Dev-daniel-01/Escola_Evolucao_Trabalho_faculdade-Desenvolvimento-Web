@@ -1,0 +1,447 @@
+/*
+    Projeto: Site institucional - Escola Evolução (São José dos Pinhais - PR)
+    Disciplina: Desenvolvimento Front-End para Web - Universidade Positivo
+    Arquivo: style.css
+    Descrição: estilos compartilhados por todas as páginas (com Bootstrap e com CSS puro).
+*/
+
+:root {
+    --cor-principal: #DB8027;
+    --cor-principal-escura: #B5651A;
+    --cor-destaque: #FFC93C;
+    --cor-texto: #333333;
+    --cor-fundo: #FFF9F2;
+    --cor-branca: #FFFFFF;
+    --cor-rodape: #2F2F2F;
+    --fonte-texto: Arial, Helvetica, sans-serif;
+    --fonte-titulo: "Arial Rounded MT Bold", Arial, Helvetica, sans-serif;
+    --raio: 12px;
+    --sombra: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fonte-texto);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-principal);
+    line-height: 1.3;
+}
+
+a {
+    color: var(--cor-principal);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.conteudo {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.secao {
+    padding: 48px 0;
+}
+
+.titulo-secao {
+    display: inline-block;
+    margin-bottom: 24px;
+    padding-bottom: 8px;
+    border-bottom: 4px solid var(--cor-destaque);
+}
+
+.btn-escola {
+    display: inline-block;
+    padding: 10px 24px;
+    border: none;
+    border-radius: var(--raio);
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-escola:hover {
+    background-color: var(--cor-principal-escura);
+    color: var(--cor-branca);
+}
+
+.card-escola {
+    background-color: var(--cor-branca);
+    border: none;
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    overflow: hidden;
+}
+
+.card-escola img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.cabecalho {
+    background-color: var(--cor-branca);
+    box-shadow: var(--sombra);
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.menu-link {
+    display: block;
+    padding: 8px 10px;
+    border-radius: var(--raio);
+    color: var(--cor-texto);
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu-link:hover,
+.menu-link.ativo {
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#menu-botao {
+    padding: 6px 12px;
+    border: 2px solid var(--cor-principal);
+    border-radius: var(--raio);
+    background-color: var(--cor-branca);
+    color: var(--cor-principal);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu-lista {
+    display: none;
+    width: 100%;
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-lista.aberto {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu-link.menu-destaque {
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+}
+
+.menu-link.menu-destaque:hover {
+    background-color: var(--cor-principal-escura);
+}
+
+.faixa-topo {
+    padding: 6px 0;
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+    font-size: 14px;
+}
+
+.faixa-topo-itens {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 24px;
+}
+
+.faixa-topo a {
+    color: var(--cor-branca);
+    text-decoration: none;
+}
+
+.banner-pagina {
+    padding: 64px 0;
+    background-color: var(--cor-principal);
+    background-size: cover;
+    background-position: center;
+    color: var(--cor-branca);
+    text-align: center;
+}
+
+.banner-grande {
+    padding: 120px 0;
+}
+
+.banner-pagina h1 {
+    margin: 0 0 8px;
+    color: var(--cor-branca);
+}
+
+.banner-pagina p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.duas-colunas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.duas-colunas > * {
+    flex: 1;
+}
+
+.duas-colunas img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+.lista-blocos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.lista-blocos > * {
+    flex: 1 1 240px;
+}
+
+.card-corpo {
+    padding: 20px;
+}
+
+.card-corpo h3 {
+    margin-top: 0;
+}
+
+.video-vertical {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 600px;
+    margin: 0 auto;
+}
+
+.imagem-secao {
+    height: 320px;
+    object-fit: cover;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.galeria figure {
+    margin: 0;
+}
+
+.tabela-escola thead th {
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+}
+
+.campo {
+    border: 2px solid #DDDDDD;
+    border-radius: var(--raio);
+}
+
+.campo:hover {
+    border-color: var(--cor-destaque);
+}
+
+.campo:focus {
+    border-color: var(--cor-principal);
+    box-shadow: 0 0 0 3px rgba(219, 128, 39, 0.25);
+    outline: none;
+}
+
+.campo:focus:invalid {
+    border-color: #DC3545;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
+}
+
+.linha-tempo {
+    margin: 0;
+    padding: 0 0 0 24px;
+    border-left: 4px solid var(--cor-principal);
+    list-style: none;
+}
+
+.linha-tempo li {
+    margin-bottom: 24px;
+}
+
+.linha-tempo-ano {
+    display: inline-block;
+    padding: 2px 12px;
+    border-radius: var(--raio);
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+    font-weight: bold;
+}
+
+.lista-valores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 24px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lista-valores li {
+    padding: 8px 18px;
+    border: 2px solid var(--cor-principal);
+    border-radius: var(--raio);
+    background-color: var(--cor-branca);
+    color: var(--cor-principal-escura);
+    font-weight: bold;
+}
+
+.citacao {
+    margin: 0;
+    padding: 16px 24px;
+    border-left: 6px solid var(--cor-principal);
+    background-color: var(--cor-branca);
+    border-radius: var(--raio);
+    font-size: 20px;
+}
+
+.faixa-chamada {
+    padding: 48px 0;
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+    text-align: center;
+}
+
+.faixa-chamada h2 {
+    margin-top: 0;
+    color: var(--cor-branca);
+}
+
+.btn-claro {
+    background-color: var(--cor-branca);
+    color: var(--cor-principal);
+}
+
+.btn-claro:hover {
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto);
+}
+
+.rodape {
+    padding: 32px 0 16px;
+    background-color: var(--cor-rodape);
+    color: var(--cor-branca);
+}
+
+.rodape-colunas {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.rodape-colunas > div {
+    flex: 1;
+}
+
+.rodape-logo {
+    height: 56px;
+    width: auto;
+    margin-bottom: 12px;
+}
+
+.rodape h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: var(--cor-destaque);
+}
+
+.rodape p {
+    margin: 4px 0;
+}
+
+.rodape a {
+    color: var(--cor-branca);
+}
+
+.rodape a:hover {
+    color: var(--cor-destaque);
+}
+
+.rodape-copyright {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #555555;
+    text-align: center;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    .faixa-topo-itens {
+        justify-content: flex-end;
+    }
+
+    .duas-colunas {
+        flex-direction: row;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rodape-colunas {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1200px) {
+    #menu-botao {
+        display: none;
+    }
+
+    .menu-lista {
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+        width: auto;
+        margin: 0;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
