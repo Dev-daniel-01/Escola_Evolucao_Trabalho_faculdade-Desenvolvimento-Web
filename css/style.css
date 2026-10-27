@@ -35,9 +35,31 @@ body {
 h1,
 h2,
 h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
     font-family: var(--fonte-titulo);
+    font-weight: bold;
     color: var(--cor-principal);
     line-height: 1.3;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p,
+ul,
+ol {
+    margin-top: 0;
+    margin-bottom: 16px;
 }
 
 a {
@@ -52,7 +74,7 @@ img {
 .conteudo {
     max-width: 1140px;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0 12px;
 }
 
 .secao {
@@ -102,6 +124,12 @@ img {
     box-shadow: var(--sombra);
 }
 
+.logo {
+    display: block;
+    margin-right: 16px;
+    padding: 5px 0;
+}
+
 .logo img {
     height: 60px;
     width: auto;
@@ -128,8 +156,8 @@ img {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 #menu-botao {
@@ -185,7 +213,7 @@ img {
 }
 
 .banner-pagina {
-    padding: 64px 0;
+    padding: 96px 0;
     background-color: var(--cor-principal);
     background-size: cover;
     background-position: center;
@@ -410,6 +438,14 @@ img {
 }
 
 @media (min-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
     .faixa-topo-itens {
         justify-content: flex-end;
     }
@@ -443,5 +479,11 @@ img {
 
     .galeria {
         grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1400px) {
+    .conteudo {
+        max-width: 1320px;
     }
 }

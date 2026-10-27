@@ -4,7 +4,7 @@
     Arquivo: script.js
     Descrição: funcionalidades em JavaScript puro usadas nas páginas do site.
     - Menu hambúrguer das páginas feitas com CSS puro (sobre.html e estrutura.html).
-    - Formulário de contato que salva as mensagens no localStorage (contato.html).
+    - Formulário de contato que cadastra, edita e exclui mensagens salvas no localStorage (contato.html).
 */
 
 const menuBotao = document.getElementById("menu-botao");
@@ -21,8 +21,10 @@ if (menuBotao) {
 const formContato = document.getElementById("form-contato");
 const listaMensagens = document.getElementById("lista-mensagens");
 const alertaSucesso = document.getElementById("alerta-sucesso");
+const botaoEnviar = document.getElementById("botao-enviar");
 
 let mensagens = [];
+let indiceEdicao = -1;
 
 function carregarMensagens() {
     const mensagensSalvas = localStorage.getItem("mensagens");
@@ -53,6 +55,7 @@ function mostrarMensagens() {
                     <h3 class="card-title fs-5">${mensagem.assunto}</h3>
                     <p class="card-text">${mensagem.texto}</p>
                     <p class="small text-muted">${mensagem.nome} - ${mensagem.email} - ${mensagem.telefone} - ${mensagem.data}</p>
+                    <button type="button" class="btn btn-outline-secondary btn-sm me-2" onclick="editarMensagem(${i})">Editar</button>
                     <button type="button" class="btn btn-outline-danger btn-sm" onclick="excluirMensagem(${i})">Excluir</button>
                 </div>
             </article>
@@ -60,10 +63,32 @@ function mostrarMensagens() {
     }
 }
 
+function editarMensagem(indice) {
+    const mensagem = mensagens[indice];
+
+    document.getElementById("nome").value = mensagem.nome;
+    document.getElementById("email").value = mensagem.email;
+    document.getElementById("telefone").value = mensagem.telefone;
+    document.getElementById("assunto").value = mensagem.assunto;
+    document.getElementById("mensagem").value = mensagem.texto;
+
+    indiceEdicao = indice;
+    botaoEnviar.value = "Salvar alteração";
+    alertaSucesso.classList.add("d-none");
+    formContato.scrollIntoView();
+}
+
+function cancelarEdicao() {
+    indiceEdicao = -1;
+    botaoEnviar.value = "Enviar mensagem";
+    formContato.reset();
+}
+
 function excluirMensagem(indice) {
     mensagens.splice(indice, 1);
     salvarMensagens();
     mostrarMensagens();
+    cancelarEdicao();
 }
 
 function enviarMensagem(evento) {
@@ -78,11 +103,17 @@ function enviarMensagem(evento) {
         data: new Date().toLocaleDateString("pt-BR")
     };
 
-    mensagens.push(novaMensagem);
+    if (indiceEdicao === -1) {
+        mensagens.push(novaMensagem);
+        alertaSucesso.textContent = "Mensagem enviada com sucesso! Ela foi salva na lista abaixo.";
+    } else {
+        mensagens[indiceEdicao] = novaMensagem;
+        alertaSucesso.textContent = "Mensagem alterada com sucesso!";
+    }
+
     salvarMensagens();
     mostrarMensagens();
-
-    formContato.reset();
+    cancelarEdicao();
     alertaSucesso.classList.remove("d-none");
 }
 
