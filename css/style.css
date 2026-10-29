@@ -188,12 +188,8 @@ img {
     gap: 4px;
 }
 
-.menu-link.menu-destaque {
-    background-color: var(--cor-principal);
-    color: var(--cor-branca);
-}
 
-.menu-link.menu-destaque:hover {
+.menu-link:hover {
     background-color: var(--cor-principal-escura);
 }
 
