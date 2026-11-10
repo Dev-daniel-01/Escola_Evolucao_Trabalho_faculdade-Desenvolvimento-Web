@@ -26,6 +26,29 @@ const botaoEnviar = document.getElementById("botao-enviar");
 let mensagens = [];
 let indiceEdicao = -1;
 
+
+function formatarTelefone(valor) {
+    let numeros = valor.replace(/\D/g, "");
+
+    // Depois do DDD, o número precisa começar com 9
+    if (numeros.length > 2 && numeros[2] !== "9") {
+        numeros = numeros.slice(0, 2) + numeros.slice(3);
+    }
+
+    numeros = numeros.slice(0, 11);
+
+    if (numeros.length === 0) {
+        return "";
+    }
+    if (numeros.length <= 2) {
+        return "(" + numeros;
+    }
+    if (numeros.length <= 7) {
+        return "(" + numeros.slice(0, 2) + ") " + numeros.slice(2);
+    }
+    return "(" + numeros.slice(0, 2) + ") " + numeros.slice(2, 7) + "-" + numeros.slice(7);
+}
+
 function carregarMensagens() {
     const mensagensSalvas = localStorage.getItem("mensagens");
 
@@ -97,7 +120,7 @@ function enviarMensagem(evento) {
     const novaMensagem = {
         nome: document.getElementById("nome").value,
         email: document.getElementById("email").value,
-        telefone: document.getElementById("telefone").value,
+        telefone: formatarTelefone(document.getElementById("telefone").value),
         assunto: document.getElementById("assunto").value,
         texto: document.getElementById("mensagem").value,
         data: new Date().toLocaleDateString("pt-BR")
@@ -121,4 +144,9 @@ if (formContato) {
     carregarMensagens();
     mostrarMensagens();
     formContato.addEventListener("submit", enviarMensagem);
+
+    const campoTelefone = document.getElementById("telefone");
+    campoTelefone.addEventListener("input", function () {
+        campoTelefone.value = formatarTelefone(campoTelefone.value);
+    });
 }
